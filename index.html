@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks landing page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="resources\logo.png" class="logo" /></a>
+            <div class="toggle" onClick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">What's New</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>It's not just coffee<br />It's <span>Starbucks</span></h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+                    tenetur quae provident harum id suscipit eum, omnis aliquam, impedit
+                    labore illum voluptas ducimus. Laboriosam beatae vel sint expedita
+                    ex saepe.
+                </p>
+                <a href="">Learn More</a>
+            </div>
+            <div class="imgbox">
+                <img src="resources/img1.png" class="starbucks" />
+            </div>
+        </div>
+        <ul class="thumb">
+            <li>
+                <img src="resources/thumb1.png" onclick="imgSlider('resources/img1.png');changeCircleColor('#017143')" />
+            </li>
+            <li>
+                <img src="resources/thumb2.png" onclick="imgSlider('resources/img2.png');changeCircleColor('#eb7495')" />
+            </li>
+            <li>
+                <img src="resources/thumb3.png" onclick="imgSlider('resources/img3.png');changeCircleColor('#d752b1')" />
+            </li>
+        </ul>
+        <ul class="sci">
+            <li>
+                <a href="#"><img src="resources/facebook.png" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="resources/twitter.png" /></a>
+            </li>
+            <li>
+                <a href="#"><img src="resources/instagram.png" /></a>
+            </li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector(".starbucks").src = anything;
+        }
+        function changeCircleColor(color){
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
